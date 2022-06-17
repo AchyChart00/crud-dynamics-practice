@@ -2,22 +2,23 @@ import React from "react";
 
 import { NavLink, Link } from "react-router-dom";
 
-import {
-  Container,
-  Navbar,
-  Nav,
-  NavDropdown,
-} from "react-bootstrap";
+import { Container, Navbar, Nav} from "react-bootstrap";
 
 import { SiDynamics365 } from "react-icons/si";
-import { BiHomeAlt } from "react-icons/bi";
+import {
+  BiHomeAlt,
+  BiAddToQueue,
+  BiEdit
+} from "react-icons/bi";
+import {MdDeleteOutline} from "react-icons/md"
+
 
 export const Navigationbar = () => {
   return (
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand >
             <Link className="navbar-brand" to="/">
               <span>
                 <SiDynamics365 />
@@ -28,8 +29,7 @@ export const Navigationbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">
-                
+              <Nav.Link>
                 <NavLink
                   className={({ isActive }) =>
                     "nav-item nav-link " + (isActive ? "active" : "")
@@ -37,22 +37,50 @@ export const Navigationbar = () => {
                   to="/home"
                 >
                   <span>
-                  <BiHomeAlt />
-                </span> Home
+                    <BiHomeAlt />
+                  </span>{" "}
+                  Home
                 </NavLink>
               </Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Gifts" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Data</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Create</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    "nav-item nav-link " + (isActive ? "active" : "")
+                  }
+                  to="/add"
+                >
+                  <span>
+                    <BiAddToQueue />
+                  </span>{" "}
+                  Añadir
+                </NavLink>
+              </Nav.Link>
+              <Nav.Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    "nav-item nav-link " + (isActive ? "active" : "")
+                  }
+                  to="/edit"
+                >
+                  <span>
+                    <BiEdit />
+                  </span>{" "}
+                  Editar
+                </NavLink>
+              </Nav.Link>
+              <Nav.Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    "nav-item nav-link " + (isActive ? "active" : "")
+                  }
+                  to="/delete"
+                >
+                  <span>
+                    <MdDeleteOutline />
+                  </span>{" "}
+                  Eliminar
+                </NavLink>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

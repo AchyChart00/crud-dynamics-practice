@@ -8,12 +8,6 @@ import { LandingPlaceHolder } from "../helpers/LandingPlaceHolder";
 
 export const HomeDynamics = () => {
   const [data, isLoading] = getDynamicsApi();
-  console.log(data);
-  console.log(isLoading);
-
-  const mostrarDatos = () => {
-    console.log(data, "mostrarDatos");
-  };
 
   return (
     <>
