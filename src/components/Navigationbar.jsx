@@ -29,7 +29,6 @@ export const Navigationbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link>
                 <NavLink
                   className={({ isActive }) =>
                     "nav-item nav-link " + (isActive ? "active" : "")
@@ -41,8 +40,7 @@ export const Navigationbar = () => {
                   </span>{" "}
                   Home
                 </NavLink>
-              </Nav.Link>
-              <Nav.Link>
+              
                 <NavLink
                   className={({ isActive }) =>
                     "nav-item nav-link " + (isActive ? "active" : "")
@@ -54,8 +52,7 @@ export const Navigationbar = () => {
                   </span>{" "}
                   Añadir
                 </NavLink>
-              </Nav.Link>
-              <Nav.Link>
+              
                 <NavLink
                   className={({ isActive }) =>
                     "nav-item nav-link " + (isActive ? "active" : "")
@@ -67,8 +64,7 @@ export const Navigationbar = () => {
                   </span>{" "}
                   Editar
                 </NavLink>
-              </Nav.Link>
-              <Nav.Link>
+              
                 <NavLink
                   className={({ isActive }) =>
                     "nav-item nav-link " + (isActive ? "active" : "")
@@ -80,7 +76,6 @@ export const Navigationbar = () => {
                   </span>{" "}
                   Eliminar
                 </NavLink>
-              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

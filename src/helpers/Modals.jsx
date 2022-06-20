@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
-import { FcCheckmark, FcHighPriority } from "react-icons/fc";
+import { FcCheckmark, FcHighPriority, FcExpired, FcInfo } from "react-icons/fc";
 
 export const Modals = ({ show, handleClose }) => {
   return (
@@ -39,6 +39,36 @@ export const ModalsNegative = ({ showNegative, handleCloseNegative }) => {
         <Modal.Body>Por favor, Contacte con el administrador</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseNegative}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+
+export const ModalsEmpty = ({ showEmpty, handleCloseEmpty }) => {
+  console.log("modal empty");
+  console.log(showEmpty, handleCloseEmpty);
+  return (
+    <>
+      <Modal show={showEmpty} onHide={handleCloseEmpty}>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            <FcHighPriority /> ERROR
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <FcExpired />
+          Nombre es obligatorio
+        </Modal.Body>
+        <Modal.Body>
+          <FcInfo />
+          Uno o más campos Están vacios
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseEmpty}>
             Cerrar
           </Button>
         </Modal.Footer>
