@@ -24,6 +24,31 @@ export const Modals = ({ show, handleClose }) => {
   );
 };
 
+export const ConfirmationModals = ({ showConf, handleCloseConf, handleCloseConfDelete, id }) => {
+  return (
+    <>
+      <Modal show={showConf} onHide={handleCloseConf}>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            <FcCheckmark />
+            ¿Estas seguro?
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Se eliminara la entrada de forma permanente</Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={()=>handleCloseConfDelete(id)}>
+            Aceptar
+          </Button>
+          <Button variant="secondary" onClick={handleCloseConf}>
+            Cancelar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+
 export const ModalsNegative = ({ showNegative, handleCloseNegative }) => {
   console.log("modal negativo");
   console.log(showNegative, handleCloseNegative);

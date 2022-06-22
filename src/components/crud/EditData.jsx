@@ -6,19 +6,21 @@ import { useLocation } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 
-import { postDynamicsApi } from "../../helpers/getDynamicsApi";
+import { patchDynamicsApi } from "../../helpers/getDynamicsApi";
 import { Modals, ModalsNegative, ModalsEmpty } from "../../helpers/Modals";
 
 export const EditData = () => {
-  const {state} = useLocation();
-  console.log(state);
+  const { state } = useLocation();
+
+  //console.log(estado);
   //Hooks para manejar el formulario
   const [values, handleInputChange, reset] = useForm({
-    nw_Nombre: "",
-    nw_Direccion: "",
-    nw_Precio: null,
+    nw_nombre: state.nw_nombre,
+    nw_direccion: state.nw_direccion,
+    nw_precio: state.nw_precio,
   });
 
+  console.log(values);
   //Valores que se instroducen en el hook personalizado
   const { nw_nombre, nw_direccion, nw_precio } = values;
 
@@ -42,7 +44,7 @@ export const EditData = () => {
     //Se valida que no este vacio el campo y que no contenga espacios
     if (!isEmpty(values.nw_nombre, { ignore_whitespace: true })) {
       //Hacemos envio de los valores al Axios.post
-      const res = await postDynamicsApi(values);
+      const res = await patchDynamicsApi(values, state.nw_giftid);
       console.log(res);
       //Comprobamos que regrese un status positivo.
       if (res) {

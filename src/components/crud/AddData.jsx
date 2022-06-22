@@ -57,7 +57,7 @@ export const AddData = () => {
       console.log("SHowEmpty front 2", showEmpty);
     }
   };
-
+  console.log(values);
   return (
     <>
       <div className="container">

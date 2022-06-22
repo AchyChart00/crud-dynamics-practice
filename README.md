@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##
+
+npm install
+npm start
+// edit .env file to see changes
+
 ## Available Scripts
 
 In the project directory, you can run:
